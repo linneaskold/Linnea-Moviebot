@@ -16,6 +16,8 @@ movies = [
     {"title":"The tunnel to summer, the exit of goodbyes","genre":"anime","mood":"touching","age":"13+"},
     ]
 
+exit_words = ["thank you","thx","bye"]
+
 genre = input ("What genre are you interested in?")
 mood = input ("What mood do you want?")
 age = input ("What age rating are you looking for? (7+, 13+, 16+)")
@@ -29,25 +31,31 @@ def run_moviebot():
 
 
 
- def main():
-    run_moviebot()
+  def main():
+     
+    while True:
+
+      for movie in movies:
+        score = 0
+      if movie["genre"] == genre:
+         score += 3
+      if movie["mood"] == mood:
+         score += 2
+      if movie["age"] == age:
+         score += 2
+
+      if score > best_score:
+         best_score = score
+         best_movie = (movie["title"], score)
+         print("I recommend you to watch:", best_movie)
+      else: 
+          print("Sorry, I couldn't find a movie that matches your preferences.")
+
+      run_moviebot()
 
 
-while True:
 
-    for movie in movies:
-      score = 0
-    if movie["genre"] == genre:
-        score += 3
-    if movie["mood"] == mood:
-        score += 2
-    if movie["age"] == age:
-        score += 2
 
-    if score > best_score:
-        best_score = score
-        best_movie = (movie["title"], score)
-    print("I recommend you to watch:", best_movie)
-    #den kommer printa oändlig, behöver fixa
+ 
 
 
