@@ -1,5 +1,3 @@
-
-
 movies = [
     {"title":"Iron Man","genre":"action","mood":"confident","age":"13+"},
     {"title":"Howls Moving Castle","genre":"anime","mood":"magical","age":"7+"},
@@ -18,44 +16,38 @@ movies = [
 
 exit_words = ["thank you","thx","bye"]
 
-genre = input ("What genre are you interested in?")
-mood = input ("What mood do you want?")
-age = input ("What age rating are you looking for? (7+, 13+, 16+)")
 
 
 
-best_score = 0
-best_movie = ""
 
 def run_moviebot():
-
-
-
-  def main():
-     
+      
     while True:
+        genre = input ("What genre are you interested in?")
+        mood = input ("What mood do you want?")
+        age = input ("What age rating are you looking for? (7+, 13+, 16+)")
 
-      for movie in movies:
-        score = 0
-      if movie["genre"] == genre:
-         score += 3
-      if movie["mood"] == mood:
-         score += 2
-      if movie["age"] == age:
-         score += 2
-
-      if score > best_score:
-         best_score = score
-         best_movie = (movie["title"], score)
-         print("I recommend you to watch:", best_movie)
-      else: 
+        best_score = 0
+        best_movie = "" 
+        for movie in movies:
+            score = 0
+        if movie["genre"] == genre:
+            score += 3
+        if movie["mood"] == mood:
+            score += 2
+        if movie["age"] == age:
+            score += 2
+        if score > best_score:
+            best_score = score
+            best_movie = (movie["title"], score)
+         
+        if best_movie:      
+          print("I recommend you to watch:", best_movie)
+        else: 
           print("Sorry, I couldn't find a movie that matches your preferences.")
+      
 
-      run_moviebot()
-
-
-
-
- 
+run_moviebot()
 
 
+#Koden loopar och ger en film men den ger inte rätt film efter preferens
