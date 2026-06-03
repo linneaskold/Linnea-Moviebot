@@ -1,4 +1,5 @@
 # Linnea-Moviebot
+Jag la upp min kod på min repository på github.com istället för github desktop. 
 
 Jag har gjort en filmrekommendationsbot.  
 
