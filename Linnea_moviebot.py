@@ -1,5 +1,5 @@
 
-#Dehhär är träningsdata fï¿½r moviebotten i genre, mood och age rating.
+#Dehhär är träningsdata för moviebotten i genre, mood och age rating. Det är listor med filmer.
 movies = [
    
     #action
@@ -149,7 +149,7 @@ exit_words = ["thank you","thx","bye","no"]
 #Denhär kör programmet
 def run_moviebot():
       
-    #Denhär innebär att sålänge som användaren inte avslutar programmet så kommer programmet köra.
+    #Denhär innebär att sålänge som användaren inte avslutar programmet så kommer programmet köra. Det är en loop som körs sålänge som användaren inte skriver ett exitword.
     while True:
 
         #Denhär delen under frågar användaren om genre, mood och age och sparar användarens svar
@@ -163,7 +163,7 @@ def run_moviebot():
         recommended_titles = []
 
 
-      #Denhär under kommer jämföra användarens svar med träningsdata och ge rekommendationer baserat på hur väl de matchar. Ju mer de matchar desto högre poäng för filmen.
+      #Denhär under kommer jämföra användarens svar med träningsdata och ge rekommendationer baserat på hur väl de matchar. Ju mer de matchar desto högre poäng för filmen. 
         for movie in movies:
             score = 0
             if movie["genre"].lower() == genre:
@@ -191,6 +191,7 @@ def run_moviebot():
             print("Sorry, I couldn't find a movie that matches your preferences.")
 
         #Här under så frågar den användaren om man gillade rekommendationerna och om man gillade dem och svarar yes så kommer den fråga vilken film man gillade bäst. Och när man skriver vilken film man gillade bäst så kommer den lägga till två poäng.
+        #If, else och elif är ifsatser som säger ifall något är sant gör detta.
         else:
             like = input("Did you like the recommendations? (yes/no)").lower()
             if like == "yes":
